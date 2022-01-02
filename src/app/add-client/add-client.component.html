@@ -1,0 +1,25 @@
+<div class="container">
+  <div>
+    <h2>Ajouter une Commande :</h2>
+  </div>  <form (submit)="addClient()">
+  <div class="col-sm-4 col-md-4 col-lg-4" >
+    <label >Nom</label>
+    <input type="text"[(ngModel)]= "customer.customerName"
+           name="customerName" class="form-control">
+  </div>
+  <div class="col-sm-2 col-md-2 col-lg-2">
+    <label >Adresse</label>
+    <input type="text" [(ngModel)]= "customer.customerAddress"
+           name="customerAddress" class="form-control">
+  </div>
+  <div class="col-sm-4 col-md-4 col-lg-4">
+    <label >Date de naissance</label>
+    <input type="date" [(ngModel)]= "customer.dateOfBirth"
+           name="dateOfBirth" class="form-control">
+  </div>
+  <br/>
+  <div class="mt-2">
+    <button type="submit" class="btn btn-success">Ajouter</button>
+  </div>
+</form>
+</div>

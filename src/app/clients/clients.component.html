@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="card shadow mb-4">
+    <div class="card-body">
+      <table class="table table-striped">
+        <tr> <th>Id</th><th>Nom</th> <th>Adresse</th> <th>Date de naissance</th></tr>
+        <tbody *ngFor="let customer of customers">
+        <tr>
+          <td>{{customer.customerId}}</td>
+          <td>{{customer.customerName}}</td>
+          <td>{{customer.customerAddress}}</td>
+          <td>{{customer.dateOfBirth | date:'dd/MM/yyyy'}}</td>
+          <td><button class="btn btn-primary" [routerLink]="['/updateCustomer/',customer.customerId]">Update</button></td>
+          <td><button class="btn btn-danger" (click)="delete(customer.customerId)">Delete</button></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

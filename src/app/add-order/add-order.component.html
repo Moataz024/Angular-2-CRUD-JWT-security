@@ -1,0 +1,34 @@
+<div class="container">
+  <div>
+    <h2>Ajouter une Commande :</h2>
+  </div>  <form (submit)="addOrder()" class="col-form-label-lg">
+  <br/>
+  <div class="col-sm-4 col-md-4 col-lg-4" >
+
+    <label >Produit</label>
+    <input type="text" [(ngModel)]= "order.productName"
+           name="productName" class="form-control">
+    <br/>
+
+    <select [(ngModel)]= "order.cust" class="form-select-lg " aria-label="Default select example" name="cust">
+      <option *ngFor="let customer of customers" [ngValue]="customer.customerId">{{customer.customerName}}</option>
+    </select>
+
+    <br/><br/>
+
+    <label >Prix </label>
+    <input type="number" [(ngModel)]= "order.price"
+           name="price" class="form-control">
+
+
+    <label >Date de commande</label>
+    <input type="date" [(ngModel)]= "order.orderDate"
+           name="orderDate" class="form-control">
+
+
+  <br/>
+
+    <button type="submit" class="btn btn-success">Ajouter</button>
+  </div>
+</form>
+</div>

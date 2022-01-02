@@ -1,0 +1,27 @@
+<div class="container">
+  <div> <h2>Modifier un Produit :</h2>
+  </div>
+  <form (submit)="update()" >
+    <div class="col-sm-2col-md-2col-lg-2">
+      <label>ID Produit</label>
+      <input type="text" disabled [(ngModel)]="currentCustomer.customerId" name="customerId" class="form-control">
+    </div>
+    <div class="col-sm-4col-md-4col-lg-4">
+      <label>Nom Produit</label>
+      <input type="text" [(ngModel)]="currentCustomer.customerName" name="customerName" class="form-control">
+    </div>
+    <div class="col-sm-2col-md-2col-lg-2">
+      <label>Prix Produit
+      </label>
+      <input type="text" [(ngModel)]="currentCustomer.customerAddress" name="customerAddress" class="form-control">
+    </div>
+    <div class="col-sm-4col-md-4col-lg-4">
+      <label>Date création
+      </label>
+      <input type="date" [ngModel]="currentCustomer.dateOfBirth|date:'yyyy-MM-dd'"(ngModelChange)=" currentCustomer.dateOfBirth=$event" name="dateOfBirth" class="form-control">
+    </div>
+    <div class="mt-2">
+      <button type="submit" class="btn btn-success">Modifer</button>
+    </div>
+  </form>
+</div>
